@@ -1,8 +1,8 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "headline": "∞² - Virtual Tour, AI Solutions & Web Services",
-  "description": "Infinity Squared Technologies delivers Virtual Tour Experiences, AI solutions, and Web Services. Experience innovative solutions, immersive reality, and engaging experiences",
+  "headline": "∞² - AI Solutions, Web Development & AR/VR Development",
+  "description": "Infinity Squared Technologies delivers AI/ML solutions, web development, and AR/VR development. Experience intelligent systems, immersive experiences, and cutting-edge digital solutions",
   "author": {
     "@type": "Organization",
     "@id": "https://infinitysquaredtech.com/#organization",
@@ -15,8 +15,8 @@
       "height": 512
     },
     "sameAs": [
-        "https://linkedin.com/company/infinity-squared-technologies",
-        "https://twitter.com/infinity2tech"
+      "https://linkedin.com/company/infinity-squared-technologies",
+      "https://twitter.com/infinity2tech"
     ]
   },
   "publisher": {
@@ -27,7 +27,7 @@
     "@id": "https://infinitysquaredtech.com/"
   },
   "datePublished": "2024-01-01",
-  "dateModified": "2025-07-20",
+  "dateModified": "2026-09-15",
   "image": {
     "@type": "ImageObject",
     "url": "https://infinitysquaredtech.com/asset/cover.webp",
@@ -35,18 +35,18 @@
     "height": 630
   },
   "keywords": [
-    "Virtual Tour Company",
-    "AR/VR development",
-    "AI Solutions", 
-    "web development",
-    "WebAR",
-    "WebVR",
-    "Mixed Reality",
+    "AI Solutions",
     "Computer Vision",
-    "Machine Learning",
+    "Machine Learning Models",
     "Natural Language Processing",
+    "web development",
+    "Responsive Design",
     "Progressive Web Apps",
     "Cloud Integration",
+    "AR/VR development",
+    "WebAR Applications",
+    "WebVR Solutions",
+    "Mixed Reality Experiences",
     "technology innovation",
     "immersive experiences"
   ],
@@ -57,7 +57,7 @@
       "description": "WebAR applications and immersive AR experiences"
     },
     {
-      "@type": "Thing", 
+      "@type": "Thing",
       "name": "Virtual Tours",
       "description": "Immersive virtual tour experiences and applications"
     },
@@ -93,7 +93,7 @@
             }
           },
           {
-            "@type": "Offer", 
+            "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
               "name": "Virtual Tour Experiences"
@@ -102,7 +102,7 @@
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Service", 
+              "@type": "Service",
               "name": "Mixed Reality Experiences"
             }
           }
@@ -131,7 +131,7 @@
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Service", 
+              "@type": "Service",
               "name": "Machine Learning Models"
             }
           },
