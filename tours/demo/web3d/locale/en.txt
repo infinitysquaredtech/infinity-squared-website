@@ -1,0 +1,20 @@
+#: locale=en
+
+## Media
+
+### Title
+model_C12DC748_CAF8_251F_41D0_F964F2103A17.label = silvania_e_adilson
+
+## Skin
+
+### Image
+Image_0A1B6315_468A_6E8F_41C4_C2DCFE6ED8B4.url = skin/Image_0A1B6315_468A_6E8F_41C4_C2DCFE6ED8B4_en.png
+Image_0FA82578_468A_AA85_41D1_148E25AE1347.url = skin/Image_0FA82578_468A_AA85_41D1_148E25AE1347_en.png
+
+## Tour
+
+### Description
+tour.description = Explore your future home interactively from any browser
+
+### Title
+tour.name = Web3D Demo

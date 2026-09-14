@@ -1,0 +1,73 @@
+@keyframes loader-spin { to { transform: rotate(360deg); } }
+#fullscreen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+#fullscreen-btn:hover {
+    background: rgba(128, 128, 128, 0.9);
+    border-color: rgba(128, 128, 128, 1);
+    transform: scale(1.1);
+}
+#fullscreen-btn svg {
+    width: 35px;
+    height: 35px;
+    fill: black;
+}
+
+/* Panorama Navigation Buttons */
+.panorama-nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2;
+}
+
+.panorama-btn {
+    width: 120px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.panorama-btn:hover {
+    background: rgba(128, 128, 128, 0.9);
+    border-color: rgba(128, 128, 128, 1);
+    transform: scale(1.1);
+    color: white;
+}
+
+.panorama-btn.active {
+    background: rgba(255, 82, 82, 0.9);
+    border-color: rgba(255, 82, 82, 1);
+    color: white;
+    pointer-events: none;
+}

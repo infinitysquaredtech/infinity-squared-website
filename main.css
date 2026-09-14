@@ -1,0 +1,567 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap);
+
+.logo-container,
+.service-card {
+    transition: .3s
+}
+
+* {
+    font-family: Inter, sans-serif;
+    scrollbar-width: thin
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #000 0, #1a1a1a 50%, #333 100%)
+}
+
+.tech-gradient {
+    background: linear-gradient(45deg, #333, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text
+}
+
+.service-card {
+    backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, .1);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.floating-animation {
+    animation: 6s ease-in-out infinite float;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-20px)
+    }
+}
+
+.fade-in {
+    animation: 1s ease-in fadeIn
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.logo-container:hover {
+    transform: scale(1.05)
+}
+
+@keyframes scroll-portrait {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-362%)
+    }
+}
+
+@keyframes scroll-portrait-small {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-580%)
+    }
+}
+
+@keyframes scroll-tablet {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-200%)
+    }
+}
+
+@keyframes scroll-landscape {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-166%)
+    }
+}
+
+@media (max-width:450px) {
+    .animate-scroll {
+        animation: 20s linear infinite scroll-portrait-small
+    }
+}
+
+@media (min-width:451px) {
+    .animate-scroll {
+        animation: 20s linear infinite scroll-portrait
+    }
+}
+
+@media (min-width:768px) {
+    .animate-scroll {
+        animation: 20s linear infinite scroll-tablet
+    }
+}
+
+@media (min-width:1369px) {
+    .animate-scroll {
+        animation: 20s linear infinite scroll-landscape
+    }
+}
+
+.animate-scroll:hover {
+    animation-play-state: paused
+}
+
+/* ================================
+   Glassmorphism Components
+   ================================ */
+
+/* Glass Header */
+.glass-header {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Glass Mobile Menu */
+.glass-mobile-menu {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Glass Cards (for dark bg sections) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(255, 255, 255, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Why Work With Us — feature item hover transitions */
+.glass-card .flex.items-start,
+.glass-card .flex.items-center {
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card .flex.items-start:hover,
+.glass-card .flex.items-center:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(6px);
+}
+
+.glass-card .flex.items-start span,
+.glass-card .flex.items-center span {
+    transition: transform 0.3s ease;
+}
+
+.glass-card .flex.items-start:hover span,
+.glass-card .flex.items-center:hover span {
+    transform: scale(1.15);
+}
+
+/* Contact Glass Card */
+.glass-contact-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Glass Form Inputs */
+.glass-input {
+    background: rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.32) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08) !important;
+    outline: none;
+}
+
+/* Glass Stat Cards in About */
+.glass-stat-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Portfolio Scroller — project cards */
+.glass-portfolio-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transform: scale(1);
+    transition: background 0.35s ease, border-color 0.35s ease,
+                box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+    will-change: transform;
+}
+
+.glass-portfolio-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5),
+                0 0 32px rgba(255, 255, 255, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Portfolio Scroller — prev/next buttons */
+.glass-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.glass-nav-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* Portfolio Scroller — modal */
+.glass-modal {
+    background: rgba(51, 51, 60, 0.65);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Background Glow Orbs */
+.glass-orb-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Fade orbs to black at section top & bottom edges */
+.glass-orb-container::before,
+.glass-orb-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 160px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glass-orb-container::before {
+    top: 0;
+    background: linear-gradient(to bottom, #000000 0%, transparent 100%);
+}
+
+.glass-orb-container::after {
+    bottom: 0;
+    background: linear-gradient(to top, #000000 0%, transparent 100%);
+}
+
+.glass-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+}
+
+/* Portfolio Scroller orbs — soft white/blue tones so they work on any page */
+.glass-orb-scroller-1 {
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.36), transparent 70%);
+    top: -100px;
+    left: -80px;
+    animation: orb-drift-a 16s ease-in-out infinite alternate;
+}
+
+.glass-orb-scroller-2 {
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.32), transparent 70%);
+    bottom: -80px;
+    right: -60px;
+    animation: orb-drift-b 13s ease-in-out infinite alternate;
+}
+
+/* Clients section orbs, centered near the tab switcher */
+.glass-orb-clients-1 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.38), transparent 70%);
+    top: 0px;
+    left: 30%;
+    animation: orb-drift-a 15s ease-in-out infinite alternate;
+}
+
+.glass-orb-clients-2 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.36), transparent 70%);
+    top: 20px;
+    right: 30%;
+    animation: orb-drift-b 12s ease-in-out infinite alternate;
+}
+
+/* Tab content slide animation on key change */
+.tab-content-fade {
+    animation: tab-slide-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes tab-slide-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Glass tab switcher pill */
+.glass-tab-switcher {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Sliding white pill indicator */
+.glass-tab-indicator {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    bottom: 4px;
+    background: #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(0);
+    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+    z-index: 0;
+}
+
+.glass-tab-indicator.active {
+    transform: translateX(100%);
+}
+
+/* Services section orbs */
+.glass-orb-services-1 {
+    width: 620px;
+    height: 620px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.50), transparent 70%);
+    top: 50px;
+    left: -80px;
+    animation: orb-drift-a 14s ease-in-out infinite alternate;
+}
+
+.glass-orb-services-2 {
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.36), transparent 70%);
+    bottom: -150px;
+    right: -80px;
+    animation: orb-drift-b 17s ease-in-out infinite alternate;
+}
+
+.glass-orb-services-3 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.45), transparent 70%);
+    top: 40%;
+    left: 42%;
+}
+
+/* Contact section orbs */
+.glass-orb-contact-1 {
+    width: 580px;
+    height: 580px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.44), transparent 70%);
+    top: -170px;
+    right: -80px;
+    animation: orb-drift-a 15s ease-in-out infinite alternate;
+}
+
+.glass-orb-contact-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.40), transparent 70%);
+    bottom: -130px;
+    left: -80px;
+    animation: orb-drift-b 11s ease-in-out infinite alternate;
+}
+
+/* About section orbs */
+.glass-orb-about-1 {
+    width: 530px;
+    height: 530px;
+    background: radial-gradient(circle, rgba(11, 136, 245, 0.40), transparent 70%);
+    top: -130px;
+    right: 0%;
+    animation: orb-drift-a 18s ease-in-out infinite alternate;
+}
+
+.glass-orb-about-2 {
+    width: 430px;
+    height: 430px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.36), transparent 70%);
+    bottom: -100px;
+    left: 0%;
+    animation: orb-drift-b 13s ease-in-out infinite alternate;
+}
+
+@keyframes orb-drift-a {
+    from { transform: translate(0px, 0px); }
+    to   { transform: translate(50px, 32px); }
+}
+
+@keyframes orb-drift-b {
+    from { transform: translate(0px, 0px); }
+    to   { transform: translate(-45px, 38px); }
+}
+
+/* AR/VR page orbs — purple + cyan */
+.glass-orb-arvr-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.48), transparent 70%);
+    top: -100px;
+    left: -100px;
+    animation: orb-drift-a 16s ease-in-out infinite alternate;
+}
+
+.glass-orb-arvr-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.42), transparent 70%);
+    bottom: -80px;
+    right: -80px;
+    animation: orb-drift-b 13s ease-in-out infinite alternate;
+}
+
+.glass-orb-arvr-3 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.36), transparent 70%);
+    top: 45%;
+    left: 40%;
+}
+
+/* AI/ML page orbs — emerald + blue */
+.glass-orb-aiml-1 {
+    width: 580px;
+    height: 580px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.46), transparent 70%);
+    top: -100px;
+    right: -80px;
+    animation: orb-drift-b 15s ease-in-out infinite alternate;
+}
+
+.glass-orb-aiml-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.42), transparent 70%);
+    bottom: -80px;
+    left: -80px;
+    animation: orb-drift-a 12s ease-in-out infinite alternate;
+}
+
+.glass-orb-aiml-3 {
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.34), transparent 70%);
+    top: 50%;
+    left: 42%;
+}
+
+/* Web Dev page orbs — cyan + violet */
+.glass-orb-webdev-1 {
+    width: 580px;
+    height: 580px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.44), transparent 70%);
+    top: -100px;
+    left: -80px;
+    animation: orb-drift-a 17s ease-in-out infinite alternate;
+}
+
+.glass-orb-webdev-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.42), transparent 70%);
+    bottom: -80px;
+    right: -80px;
+    animation: orb-drift-b 14s ease-in-out infinite alternate;
+}
+
+.glass-orb-webdev-3 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.36), transparent 70%);
+    top: 48%;
+    left: 38%;
+}

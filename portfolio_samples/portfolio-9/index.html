@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Bhaiya | Strategy & Growth Leader</title>
+    <meta name="description" content="Portfolio of Aman Bhaiya, Vice President and Head (Strategy and Growth) at SBI Foundation. Expert in Business Development, Hedging, and Options.">
+    <meta name="keywords" content="Aman Bhaiya, SBI Foundation, Strategy, Growth, Mumbai, IIM Shillong, Portfolio">
+    <meta property="og:title" content="Aman Bhaiya - Professional Portfolio">
+    <meta property="og:description" content="VP & Head (Strategy and Growth) at SBI Foundation.">
+    <meta name="twitter:title" content="Aman Bhaiya - Professional Portfolio">
+    <meta name="twitter:description" content="VP & Head (Strategy and Growth) at SBI Foundation.">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary: #0f172a; /* Slate 900 */
+            --secondary: #334155; /* Slate 700 */
+            --accent: #0ea5e9; /* Sky 500 */
+            --background: #f8fafc; /* Slate 50 */
+            --surface: #ffffff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--primary);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif; /* Keep it clean sans-serif for modern corp feel, or Playfair for headings if desired. Sticking to Inter for modern clean look. */
+        }
+        .container-custom {
+            @apply max-w-5xl mx-auto px-6;
+        }
+        
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="components/ScrollReveal.js"></script>
+    <script type="text/babel" src="components/Navigation.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/Experience.js"></script>
+    <script type="text/babel" src="components/Education.js"></script>
+    <script type="text/babel" src="components/Skills.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>

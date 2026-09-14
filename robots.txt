@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /asset/
+Disallow: /tours/
+Disallow: /webar-demos/
+
+# Sitemap
+Sitemap: https://infinitysquaredtech.com/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1

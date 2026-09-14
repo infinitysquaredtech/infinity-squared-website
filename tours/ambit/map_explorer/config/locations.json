@@ -1,0 +1,388 @@
+{
+  "defaultPoi": {
+    "lat": 19.18432517664754,
+    "lng": 72.84706629615232,
+    "name": "Ambit Iconia, Malad",
+    "icon": "fa-star"
+  },
+  "basemap": {
+    "cartoApiKey": "cb1_30n9_1_a7129de8d4120ed55d613f3c"
+  },
+  "categories": [
+    {
+      "key": "Education",
+      "color": "#3fb950"
+    },
+    {
+      "key": "Hospital",
+      "color": "#f85149"
+    },
+    {
+      "key": "Shopping",
+      "color": "#58a6ff"
+    },
+    {
+      "key": "Temple",
+      "color": "#d29922"
+    }
+  ],
+  "radiusZones": [
+    {
+      "key": "inner",
+      "label": "< 1 km",
+      "radius": 1000,
+      "color": "#26a641",
+      "fillOpacity": 0.08
+    },
+    {
+      "key": "close",
+      "label": "1 – 2 km",
+      "radius": 2000,
+      "color": "#75d02e",
+      "fillOpacity": 0.06
+    },
+    {
+      "key": "near",
+      "label": "2 – 5 km",
+      "radius": 5000,
+      "color": "#d29922",
+      "fillOpacity": 0.04
+    },
+    {
+      "key": "mid",
+      "label": "5 – 10 km",
+      "radius": 10000,
+      "color": "#58a6ff",
+      "fillOpacity": 0.03
+    },
+    {
+      "key": "far",
+      "label": "> 10 km",
+      "radius": 20000,
+      "color": "#a371f7",
+      "fillOpacity": 0
+    }
+  ],
+  "locations": [
+    {
+      "name": "Orane International School of Beauty & Wellness Malad",
+      "lat": 19.177875523765117,
+      "lng": 72.84632524620163,
+      "category": "Education",
+      "description": "Orane International School of Beauty & Wellness Malad is an international school located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "St. Anne's High School & Junior College",
+      "lat": 19.195183112894703,
+      "lng": 72.83740530040548,
+      "category": "Education",
+      "description": "St. Anne's High School & Junior College is a High school & Junior College",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Utkarsha Mandir Junior College",
+      "lat": 19.18841456015198,
+      "lng": 72.84482965511671,
+      "category": "Education",
+      "description": "Utkarsha Mandir Junior College is a Junior College located Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Nagindas Khandwala College",
+      "lat": 19.193242536619238,
+      "lng": 72.84807901114503,
+      "category": "Education",
+      "description": "Nagindas Khandwala College is a College located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Nirmala College Of Commerce And Science",
+      "lat": 19.18381070811664,
+      "lng": 72.85189458838018,
+      "category": "Education",
+      "description": "Nirmala College Of Commerce And Science is a public school located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Universal High School, Malad",
+      "lat": 19.18954586868776,
+      "lng": 72.85066006803794,
+      "category": "Education",
+      "description": "Universal High School, Malad is a public school located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Ramniwas Bajaj English High School",
+      "lat": 19.176952354398228,
+      "lng": 72.84573906539309,
+      "category": "Education",
+      "description": "Ramniwas Bajaj English High School is a High School located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "NAVJIVAN JUNIOR COLLEGE, BAJAJ DEGREE COLLEGE, MALAD EAST",
+      "lat": 19.182981296444755,
+      "lng": 72.85044575479924,
+      "category": "Education",
+      "description": "NAVJIVAN JUNIOR COLLEGE, BAJAJ DEGREE COLLEGE, MALAD EAST is a College located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Gokuldham High School & Jr. College",
+      "lat": 19.174657446833464,
+      "lng": 72.86795540323405,
+      "category": "Education",
+      "description": "Gokuldham High School & Jr. College is a High School located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Shri T P Bhatia Science College in Kandivali",
+      "lat": 19.20192135322126,
+      "lng": 72.8464569097226,
+      "category": "Education",
+      "description": "Shri T P Bhatia Science College in Kandivali is a Science College located in Malad, Mumbai.",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "name": "Shah Lifeline Hospital",
+      "lat": 19.19055421513349,
+      "lng": 72.8480601204599,
+      "category": "Hospital",
+      "description": "Shah Lifeline Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "AR HOSPITAL MULTISPECIALITY",
+      "lat": 19.18414135596192,
+      "lng": 72.84649318493592,
+      "category": "Hospital",
+      "description": "AR HOSPITAL MULTISPECIALITY is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Lifeline Medicare Hospitals",
+      "lat": 19.17524899959432,
+      "lng": 72.84463482519143,
+      "category": "Hospital",
+      "description": "Lifeline Medicare Hospitals is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Garg Multispeciality Hospital",
+      "lat": 19.192416457744578,
+      "lng": 72.84528045045565,
+      "category": "Hospital",
+      "description": "Garg Multispeciality Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Vivanta Multi Speciality Hospital",
+      "lat": 19.18003355304648,
+      "lng": 72.84284693984439,
+      "category": "Hospital",
+      "description": "Vivanta Multi Speciality Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "CritiCare Asia Multispeciality Hospital",
+      "lat": 19.181159310133463,
+      "lng": 72.83559607149249,
+      "category": "Hospital",
+      "description": "CritiCare Asia Multispeciality Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Thunga Hospital",
+      "lat": 19.196215571329663,
+      "lng": 72.84637304705662,
+      "category": "Hospital",
+      "description": "Thunga Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "MANORAMA HOSPITAL",
+      "lat": 19.19152529494701,
+      "lng": 72.84686968187525,
+      "category": "Hospital",
+      "description": "MANORAMA HOSPITAL is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Sun Multispeciality Hospital",
+      "lat": 19.190962452799567,
+      "lng": 72.84185367020714,
+      "category": "Hospital",
+      "description": "Sun Multispeciality Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Balajee Hospital malad",
+      "lat": 19.183645329775405,
+      "lng": 72.85670305128399,
+      "category": "Hospital",
+      "description": "Balajee Hospital is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Namaha Specialised Healthcare",
+      "lat": 19.19902967299792,
+      "lng": 72.84840924981297,
+      "category": "Hospital",
+      "description": "Namaha Specialised Healthcare is a Hospital located in Malad, Mumbai.",
+      "icon": "fa-hospital"
+    },
+    {
+      "name": "Oberoi Mall",
+      "lat": 19.175798946659818,
+      "lng": 72.8602888466792,
+      "category": "Shopping",
+      "description": "Oberoi Mall is a Shopping Mall located in Malad, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Crystal Plaza",
+      "lat": 19.186988591412643,
+      "lng": 72.84769609436772,
+      "category": "Shopping",
+      "description": "Crystal Plaza is a Shopping Mall located in Malad, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Inorbit Mall",
+      "lat": 19.17440529117616,
+      "lng": 72.83625145868238,
+      "category": "Shopping",
+      "description": "Inorbit Mall is a Shopping Mall located in Malad, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Infiniti Mall",
+      "lat": 19.187215890254006,
+      "lng": 72.83441233178026,
+      "category": "Shopping",
+      "description": "Infiniti Mall is a Shopping Mall located in Malad, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Malad Mall / Eastern Plaza",
+      "lat": 19.190178098335647,
+      "lng": 72.85501014054537,
+      "category": "Shopping",
+      "description": "Malad Mall / Eastern Plaza is a Shopping Mall located in Malad, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Raghuleela Mega Mall",
+      "lat": 19.21549098328996,
+      "lng": 72.84895992427258,
+      "category": "Shopping",
+      "description": "Raghuleela Mega Mall is a Shopping Mall located in Kandivalu, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Centrium Mall",
+      "lat": 19.19822667458987,
+      "lng": 72.87230587203503,
+      "category": "Shopping",
+      "description": "Centrium Mall is a Shopping Mall located in Kandivali, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Much More",
+      "lat": 19.187606342221464,
+      "lng": 72.8474102417338,
+      "category": "Shopping",
+      "description": "Much More is a Shopping Mall located in Malad, Mumbai.",
+      "icon": "fa-cart-shopping"
+    },
+    {
+      "name": "Shree Panchnath Mahadev Mandir",
+      "lat": 19.187557788409784,
+      "lng": 72.84662991400405,
+      "category": "Temple",
+      "description": "Shree Panchnath Mahadev Mandir is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Sai Baba Temple",
+      "lat": 19.182730451279166,
+      "lng": 72.8493959781351,
+      "category": "Temple",
+      "description": "Sai Baba Temple is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Shankar Mandir",
+      "lat": 19.185996018353656,
+      "lng": 72.84614885937256,
+      "category": "Temple",
+      "description": "Shankar Mandir is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Shree Sai Darshan Mandir Trust",
+      "lat": 19.186365165340185,
+      "lng": 72.8470508368066,
+      "category": "Temple",
+      "description": "Shree Sai Darshan Mandir Trust is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Chincholi Hanuman Temple",
+      "lat": 19.178470918653726,
+      "lng": 72.84593839797128,
+      "category": "Temple",
+      "description": "Chincholi Hanuman Temple is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Khatu shyam temple",
+      "lat": 19.18446262970507,
+      "lng": 72.8503280214836,
+      "category": "Temple",
+      "description": "Khatu shyam temple is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Maa Vaishno Devi Divya Dham",
+      "lat": 19.187273831319615,
+      "lng": 72.85261303098316,
+      "category": "Temple",
+      "description": "Maa Vaishno Devi Divya Dham is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Sati Bhawan Rani Sati Mandir",
+      "lat": 19.190624493777033,
+      "lng": 72.84882472576021,
+      "category": "Temple",
+      "description": "Sati Bhawan Rani Sati Mandir is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Neelkanth Mahadev Temple",
+      "lat": 19.185484890390683,
+      "lng": 72.8478926824117,
+      "category": "Temple",
+      "description": "Neelkanth Mahadev Temple is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Shree Siddhivinayak Temple",
+      "lat": 19.194968895251133,
+      "lng": 72.8491253849049,
+      "category": "Temple",
+      "description": "Shree Siddhivinayak Temple is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    },
+    {
+      "name": "Shree Sonya Maruti Mandir",
+      "lat": 19.187784953729324,
+      "lng": 72.8480730778985,
+      "category": "Temple",
+      "description": "Hanuman Mandir is a Hindu Temple located in Malad, Mumbai.",
+      "icon": "fa-flag"
+    }
+  ]
+}

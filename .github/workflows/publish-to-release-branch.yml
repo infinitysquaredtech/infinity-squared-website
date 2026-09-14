@@ -1,0 +1,38 @@
+name: Promote release to production
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Promote released tag to release branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update production branch
+        run: |
+          set -euo pipefail
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          TAG="${{ github.event.release.tag_name }}"
+          BRANCH="release"
+
+          # Create the release branch from the tag, then remove package.json
+          # and package-lock.json from the working tree so they are never
+          # committed to the release branch (on any release).
+          git checkout -B "$BRANCH" "$TAG"
+          git rm -q --force package.json package-lock.json
+
+          git commit -q -m "Create Release for $TAG"
+          git push -f origin "$BRANCH"

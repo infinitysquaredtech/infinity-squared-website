@@ -1,0 +1,181 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infinity Squared Technologies</title>
+    <meta name="description" content="Leading technology company specializing in AR/VR development, End-to-End AI/ML solutions, and Web Development services.">
+    <meta name="author" content="Infinity Squared Technologies">
+
+    <!-- favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Apple Touch Icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Infinity Squared Technologies">
+    <link rel="apple-touch-icon" href="https://infinitysquaredtech.com/asset/logos/infinity_squared_192.webp" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://infinitysquaredtech.com/asset/logos/infinity_squared_512.webp" sizes="512x512">
+
+    <!-- scripts and styles -->
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+    <!-- <script src="animation-mixer.js"></script> -->
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="gesture.js"></script>
+    <script src="ar_target_handler.js"></script>
+    <script src="click_handler.js"></script>
+
+    <!-- for visitors analytics -->
+    <script data-host="https://app.microanalytics.io" data-dnt="false" src="https://app.microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+  </head>
+  <body>
+    <!-- AR Scene Setup -->
+    <a-scene
+      mindar-image="filterMinCF:0.001; filterBeta: 0.01; imageTargetSrc: asset/single-target2.mind;"
+      color-space="sRGB"
+      renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true; precision: medium; colorManagement: true; physicallyCorrectLights;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <!-- Assets to be used -->
+      <a-assets>
+        <!-- <a-asset-item id="avatarModel" src="asset/veribot.glb"></a-asset-item> -->
+      </a-assets>
+
+      <!-- Camera Setup -->
+      <a-camera
+        position="0 0 0"
+        look-controls="enabled: false"
+        cursor="fuse: false; rayOrigin: mouse;"
+        raycaster="far: 10000; objects: .clickable"
+      ></a-camera>
+
+      <!-- Target environment -->
+      <a-entity
+        mindar-image-target="targetIndex: 0"
+        cursor="rayOrigin: mouse"
+        id="animated-target"
+      >
+        <a-entity light="type: ambient; color: #FFF; intensity: 3"></a-entity>
+        <a-light
+          type="directional"
+          intensity="1.5"
+          position="0 0 0"
+          rotation="-90 -45 0"
+          target="#directionaltarget"
+        >
+          <a-entity id="directionaltarget" position="-1 0 -1"></a-entity>
+        </a-light>
+
+        <a-entity
+          id="header-title"
+          position="0 0.5 0"
+          geometry="primitive: plane; width: 1; height: 0.2"
+          material="color: #000; opacity: 0.4"
+          text="color: white; align: center; wrap-count: 20; value: Select the Drone to view"
+        >
+        </a-entity>
+
+        <!-- Plane buttons -->
+
+        <!-- <a-plane id="example-plane1" class="clickable" color="white" position="-0.25 0.2 0" height="0.17" width="0.4" rotation="0 0 0"
+        text="align: center; width: 1; color: black; value: Veribot"
+        animation__rotate1="property: rotation; to: 0 180 0; dur: 1000; startEvents: click">
+        </a-plane>
+        <a-plane id="example-plane2" class="clickable" color="white" position="0.25 0.2 0" height="0.17" width="0.4" rotation="0 0 0"
+        text="align: center; width: 1; color: black; value: Mecha-Bot" animation__rotate2="property: scale; to: 0 180 0; dur: 1000; startEvents: click">
+        </a-plane>
+        <a-plane id="example-plane3" class="clickable" color="white" position="-0.25 -0.2 0" height="0.17" width="0.4" rotation="0 0 0"
+        text="align: center; width: 1; color: black; value: Police-Bot" animation__rotate3="property: scale; to: 0 180 0; dur: 1000; startEvents: click">
+        </a-plane>
+        <a-plane id="example-plane4" class="clickable" color="white" position="0.25 -0.2 0" height="0.17" width="0.4" rotation="0 0 0"
+        text="align: center; width: 1; color: black; value: Survallience-Bot" animation__rotate4="property: scale; to: 0 180 0; dur: 1000; startEvents: click">
+        </a-plane> -->
+
+        <!-- Button-1 -->
+        <a-image
+          id="example-plane1"
+          class="clickable"
+          src="asset/veribot_render.jpg"
+          width="0.45"
+          height="0.45"
+          position="-0.25 0.15 0"
+          animation__rotate1="property: scale; to: 0 0 0; dur: 500; startEvents: click"
+        ></a-image>
+        <!-- Button-2 -->
+        <a-image
+          id="example-plane2"
+          class="clickable"
+          src="asset/mechabot_render.jpg"
+          width="0.45"
+          height="0.45"
+          position="0.25 0.15 0"
+          animation__rotate1="property: scale; to: 0 0 0; dur: 500; startEvents: click"
+        ></a-image>
+        <!-- Button-3 -->
+        <a-image
+          id="example-plane3"
+          class="clickable"
+          src="asset/policebot_render.jpg"
+          width="0.45"
+          height="0.45"
+          position="-0.25 -0.325 0"
+          animation__rotate1="property: scale; to: 0 0 0; dur: 500; startEvents: click"
+        ></a-image>
+        <!-- Button-4 -->
+        <a-image
+          id="example-plane4"
+          class="clickable"
+          src="asset/survalliencebot_render.jpg"
+          width="0.45"
+          height="0.45"
+          position="0.25 -0.325 0"
+          animation__rotate1="property: scale; to: 0 0 0; dur: 500; startEvents: click"
+        ></a-image>
+
+        <!-- Model Container -->
+        <a-gltf-model
+          id="animated-model"
+          rotation=""
+          position=""
+          scale=""
+          src=""
+          animation-mixer
+          controller
+        ></a-gltf-model>
+        
+        <!-- Back button -->
+        <a-plane
+          id="example-plane-back"
+          class="clickable"
+          color="white"
+          opaciy="0.5"
+          position="-0.7 0.6 0"
+          height="0.17"
+          width="0.4"
+          rotation="0 0 0"
+          text="align: center; width: 1; color: black; value: Back"
+          visible="false"
+        ></a-plane>
+        
+        <!-- Buy button -->
+        <a-plane
+          id="example-plane-buy"
+          class="clickable"
+          color="white"
+          opaciy="0.5"
+          position="0.7 0.6 0"
+          height="0.17"
+          width="0.4"
+          rotation="0 0 0"
+          text="align: center; width: 1; color: black; value: Buy"
+          visible="false"
+        ></a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

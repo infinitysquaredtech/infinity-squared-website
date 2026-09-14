@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ambit - Primoris Virtual Experience</title>
+  <meta name="description" content="Explore your home at Ambit Primoris Kandivali (W) from any device">
+  <meta name="author" content="Infinity Squared Technologies">
+
+  <!-- favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Apple Touch Icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Ambit - Primoris">
+  <link rel="apple-touch-icon" href="https://infinitysquaredtech.com/asset/logos/infinity_squared_192.webp" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://infinitysquaredtech.com/asset/logos/infinity_squared_512.webp" sizes="512x512">
+  
+  <!-- styles -->
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      background-color: #1b1b1b;
+    }
+    .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0px;
+      overflow: hidden;
+    }
+    .container iframe {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border: none;
+    }
+  </style>
+
+  <!-- for visitors analytics -->
+    <script data-host="https://app.microanalytics.io" data-dnt="false" src="https://app.microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+</head>
+<body>
+  <div class="container">
+    <iframe src="" name="Ambit" width="100%" height="100%" frameborder="0" allow="fullscreen; accelerometer; gyroscope; magnetometer; vr; xr; xr-spatial-tracking; autoplay; camera; microphone" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true"></iframe>
+  </div>
+  <script type="text/javascript">
+    var urlParams = new URLSearchParams(window.location.search);
+    
+    // if urlParams has flat parameter and it is set to 3bhk then change the src of the iframe
+    if (urlParams.has('flat') && urlParams.get('flat') === 'jodi') {
+      document.querySelector('iframe').src = "//storage.net-fs.com/hosting/8311954/0/?media=JODI%20FLAT&sct=back_home,UI";
+    }
+    else if (urlParams.has('flat') && urlParams.get('flat') === '2bhk') {
+      document.querySelector('iframe').src = "//storage.net-fs.com/hosting/8311954/0/?media=2%20BHK&sct=back_home,UI";
+    }
+    else {
+      document.querySelector('iframe').src = "//storage.net-fs.com/hosting/8311954/0/";
+    }
+  </script>
+</body>
+</html>

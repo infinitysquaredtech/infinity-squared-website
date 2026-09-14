@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus - Demo</title>
+
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="js/markerHandler.js"></script>
+    <script src="js/screenHandler.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div id="loader" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#1d1d1d 0,#050505 70%);color:#fff;font-family:'Segoe UI',Arial,sans-serif;letter-spacing:0.08em;text-transform:uppercase;z-index:999;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+        <div style="width:48px;height:48px;border:3px solid rgba(255,255,255,.2);border-top-color:#ff5252;border-radius:50%;animation:loader-spin 1s linear infinite;"></div>
+        <span style="font-size:13px;">Loading Virtual Tour...</span>
+      </div>
+    </div>
+    <button id="fullscreen-btn" title="Enter Fullscreen">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+      </svg>
+    </button>
+
+    <!-- Panorama Navigation Buttons -->
+    <div class="panorama-nav">
+      <button class="panorama-btn active" data-panorama="TopFloor" data-rotation="0 -90 0" data-hotspots-rotation="0 40 0" data-show-hotspots="true" title="Top Floor">
+        <span>Top Floor</span>
+      </button>
+      <button class="panorama-btn" data-panorama="30thFloor" data-rotation="0 -120 0" data-hotspots-rotation="0 40 0" data-show-hotspots="false" title="30th Floor">
+        <span>30th Floor</span>
+      </button>
+      <button class="panorama-btn" data-panorama="25thFloor" data-rotation="0 -90 0" data-hotspots-rotation="0 40 0" data-show-hotspots="false" title="25th Floor">
+        <span>25th Floor</span>
+      </button>
+      <button class="panorama-btn" data-panorama="20thFloor" data-rotation="0 -90 0" data-hotspots-rotation="0 40 0" data-show-hotspots="false" title="20th Floor">
+        <span>20th Floor</span>
+      </button>
+      <button class="panorama-btn" data-panorama="15thFloor" data-rotation="0 -90 0" data-hotspots-rotation="0 40 0" data-show-hotspots="false" title="15th Floor">
+        <span>15th Floor</span>
+      </button>
+      <button class="panorama-btn" data-panorama="10thFloor" data-rotation="0 -90 0" data-hotspots-rotation="0 40 0" data-show-hotspots="false" title="10th Floor">
+        <span>10th Floor</span>
+      </button>
+    </div>
+
+    <a-scene loading-screen="enabled: true" wasd-controls="enabled: false" keyboard-shortcuts="enterVR: false" xr-mode-ui="enterVREnabled: false">
+      <a-camera wasd-controls-enabled="false" look-controls="pointerLockEnabled: false;"></a-camera>
+      <a-assets>
+        <img id="TopFloor" src="assets/Top Floor.jpg">
+        <img id="30thFloor" src="assets/30th Floor.jpg">
+        <img id="25thFloor" src="assets/25th Floor.jpg">
+        <img id="20thFloor" src="assets/20th Floor.jpg">
+        <img id="15thFloor" src="assets/15th Floor.jpg">
+        <img id="10thFloor" src="assets/10th Floor.jpg">
+      </a-assets>
+      <a-sky id="panorama-sky" src="#TopFloor" rotation="0 -90 0"></a-sky>
+    
+      <!-- Global Lighting -->
+      <a-light type="ambient" color="#ffffff" intensity="5"></a-light>
+      <!-- <a-light type="directional" color="#ffffff" intensity="0.5" position="0 1 0"></a-light> -->
+      
+      <!-- Hotspots Container - rotate this entity to align all hotspots with panorama -->
+      <a-entity id="hotspots-container" rotation="0 40 0">
+        <!-- Hotspot entity containing both target and marker -->
+        <a-entity id="hotspot-1" position="-1 0.5 -2.5">
+          
+          <!-- Target point in panorama - animated circular target -->
+          <a-entity id="target-point-1" position="0 0 0" look-at-camera>
+            <!-- Outer ring -->
+            <a-ring radius-inner="0.08" radius-outer="0.12" 
+                    color="#ff0000" 
+                    material="transparent: true; opacity: 0.8; side: double"
+                    pulse-target="speed: 300; minScale: 0.9; maxScale: 1.1">
+            </a-ring>
+            <!-- Inner circle -->
+            <a-circle radius="0.06" 
+                      color="#ffffff" 
+                      material="transparent: true; opacity: 0.9; side: double"
+                      pulse-target="speed: 250; minScale: 0.8; maxScale: 1.0">
+            </a-circle>
+            <!-- Center dot -->
+            <a-circle radius="0.02" 
+                      color="#ff0000" 
+                      position="0 0 0.01"
+                      material="side: double">
+            </a-circle>
+          </a-entity>
+          
+          <!-- Marker with fade component - text with background -->
+          <a-entity id="marker-1" 
+                    look-at-camera
+                    visibility-fade="fadeDuration: 0.3; checkInterval: 100; fovThreshold: 150; animationType: slide; targetPoint: #target-point-1; offsetX: 0.5; offsetY: 0.6; offsetZ: -0.5">
+            <!-- Container for slide animation with left pivot -->
+            <a-entity id="slide-container" position="-0.5 0 0">
+              <!-- White background plane -->
+              <a-plane width="1" height="0.2" color="#ffffff" material="transparent: true" position="0.5 0 0"></a-plane>
+              <!-- Black text -->
+              <a-text value="Location 1" 
+                      align="center" 
+                      color="#000000" 
+                      width="2"
+                      position="0.5 0 0.01">
+              </a-text>
+              <!-- Line pointer from bottom-left corner to target -->
+              <a-entity position="0 -0.1 0" pointer-line="target: #target-point-1; color: #ffffff;"></a-entity>
+            </a-entity>
+          </a-entity>
+          
+        </a-entity>
+
+        <!-- Hotspot entity containing both target and marker -->
+        <a-entity id="hotspot-2" position="2 0.5 -1.5">
+          
+          <!-- Target point in panorama - animated circular target -->
+          <a-entity id="target-point-2" position="0 0 0" look-at-camera>
+            <!-- Outer ring -->
+            <a-ring radius-inner="0.08" radius-outer="0.12" 
+                    color="#ff0000" 
+                    material="transparent: true; opacity: 0.8; side: double"
+                    pulse-target="speed: 300; minScale: 0.9; maxScale: 1.1">
+            </a-ring>
+            <!-- Inner circle -->
+            <a-circle radius="0.06" 
+                      color="#ffffff" 
+                      material="transparent: true; opacity: 0.9; side: double"
+                      pulse-target="speed: 250; minScale: 0.8; maxScale: 1.0">
+            </a-circle>
+            <!-- Center dot -->
+            <a-circle radius="0.02" 
+                      color="#ff0000" 
+                      position="0 0 0.01"
+                      material="side: double">
+            </a-circle>
+          </a-entity>
+          
+          <!-- Marker with fade component - text with background -->
+          <a-entity id="marker-2" 
+                    look-at-camera
+                    visibility-fade="fadeDuration: 0.3; checkInterval: 100; fovThreshold: 150; animationType: slide; targetPoint: #target-point-2; offsetX: 0.5; offsetY: 0.5; offsetZ: 0.5">
+            <!-- Container for slide animation with left pivot -->
+            <a-entity id="slide-container" position="-0.5 0 0">
+              <!-- White background plane -->
+              <a-plane width="1" height="0.2" color="#ffffff" material="transparent: true" position="0.5 0 0"></a-plane>
+              <!-- Black text -->
+              <a-text value="Location 2" 
+                      align="center" 
+                      color="#000000" 
+                      width="2"
+                      position="0.5 0 0.01">
+              </a-text>
+              <!-- Line pointer from bottom-left corner to target -->
+              <a-entity position="0 -0.1 0" pointer-line="target: #target-point-2; color: #ffffff;"></a-entity>
+            </a-entity>
+          </a-entity>
+          
+        </a-entity>
+
+        <!-- Hotspot entity containing both target and marker -->
+        <a-entity id="hotspot-3" position="0 1.2 3">
+          
+          <!-- Target point in panorama - animated circular target -->
+          <a-entity id="target-point-3" position="0 0 0" look-at-camera>
+            <!-- Outer ring -->
+            <a-ring radius-inner="0.08" radius-outer="0.12" 
+                    color="#ff0000" 
+                    material="transparent: true; opacity: 0.8; side: double"
+                    pulse-target="speed: 300; minScale: 0.9; maxScale: 1.1">
+            </a-ring>
+            <!-- Inner circle -->
+            <a-circle radius="0.06" 
+                      color="#ffffff" 
+                      material="transparent: true; opacity: 0.9; side: double"
+                      pulse-target="speed: 250; minScale: 0.8; maxScale: 1.0">
+            </a-circle>
+            <!-- Center dot -->
+            <a-circle radius="0.02" 
+                      color="#ff0000" 
+                      position="0 0 0.01"
+                      material="side: double">
+            </a-circle>
+          </a-entity>
+          
+          <!-- Marker with fade component - text with background -->
+          <a-entity id="marker-3" 
+                    look-at-camera
+                    visibility-fade="fadeDuration: 0.3; checkInterval: 100; fovThreshold: 150; animationType: slide; targetPoint: #target-point-3; offsetX: -0.6; offsetY: 0.6; offsetZ: 0.6">
+            <!-- Container for slide animation with left pivot -->
+            <a-entity id="slide-container" position="-0.5 0 0">
+              <!-- White background plane -->
+              <a-plane width="1" height="0.2" color="#ffffff" material="transparent: true" position="0.5 0 0"></a-plane>
+              <!-- Black text -->
+              <a-text value="Location 3" 
+                      align="center" 
+                      color="#000000" 
+                      width="2"
+                      position="0.5 0 0.01">
+              </a-text>
+              <!-- Line pointer from bottom-left corner to target -->
+              <a-entity position="0 -0.1 0" pointer-line="target: #target-point-3; color: #ffffff;"></a-entity>
+            </a-entity>
+          </a-entity>
+          
+        </a-entity>
+
+        <!-- Hotspot entity containing both target and marker -->
+        <a-entity id="hotspot-4" position="-3 0.8 1">
+          
+          <!-- Target point in panorama - animated circular target -->
+          <a-entity id="target-point-4" position="0 0 0" look-at-camera>
+            <!-- Outer ring -->
+            <a-ring radius-inner="0.08" radius-outer="0.12" 
+                    color="#ff0000" 
+                    material="transparent: true; opacity: 0.8; side: double"
+                    pulse-target="speed: 300; minScale: 0.9; maxScale: 1.1">
+            </a-ring>
+            <!-- Inner circle -->
+            <a-circle radius="0.06" 
+                      color="#ffffff" 
+                      material="transparent: true; opacity: 0.9; side: double"
+                      pulse-target="speed: 250; minScale: 0.8; maxScale: 1.0">
+            </a-circle>
+            <!-- Center dot -->
+            <a-circle radius="0.02" 
+                      color="#ff0000" 
+                      position="0 0 0.01"
+                      material="side: double">
+            </a-circle>
+          </a-entity>
+          
+          <!-- Marker with fade component - text with background -->
+          <a-entity id="marker-4" 
+                    look-at-camera
+                    visibility-fade="fadeDuration: 0.3; checkInterval: 100; fovThreshold: 150; animationType: slide; targetPoint: #target-point-4; offsetX: 0.5; offsetY: 0.6; offsetZ: -1.0">
+            <!-- Container for slide animation with left pivot -->
+            <a-entity id="slide-container" position="-0.5 0 0">
+              <!-- White background plane -->
+              <a-plane width="1" height="0.2" color="#ffffff" material="transparent: true" position="0.5 0 0"></a-plane>
+              <!-- Black text -->
+              <a-text value="Location 4" 
+                      align="center" 
+                      color="#000000" 
+                      width="2"
+                      position="0.5 0 0.01">
+              </a-text>
+              <!-- Line pointer from bottom-left corner to target -->
+              <a-entity position="0 -0.1 0" pointer-line="target: #target-point-4; color: #ffffff;"></a-entity>
+            </a-entity>
+          </a-entity>
+          
+        </a-entity>
+
+        <!-- Hotspot 5 -->
+        <a-entity id="hotspot-5" position="1.5 1.5 -2">
+          <a-entity id="target-point-5" position="0 0 0" look-at-camera>
+            <a-ring radius-inner="0.08" radius-outer="0.12" color="#ff0000" material="transparent: true; opacity: 0.8; side: double" pulse-target="speed: 300; minScale: 0.9; maxScale: 1.1"></a-ring>
+            <a-circle radius="0.06" color="#ffffff" material="transparent: true; opacity: 0.9; side: double" pulse-target="speed: 250; minScale: 0.8; maxScale: 1.0"></a-circle>
+            <a-circle radius="0.02" color="#ff0000" position="0 0 0.01" material="side: double"></a-circle>
+          </a-entity>
+          <a-entity id="marker-5" look-at-camera visibility-fade="fadeDuration: 0.3; checkInterval: 100; fovThreshold: 150; animationType: slide; targetPoint: #target-point-5; offsetX: 0.5; offsetY: 0.6; offsetZ: -0.5">
+            <a-entity id="slide-container" position="-0.5 0 0">
+              <a-plane width="1" height="0.2" color="#ffffff" material="transparent: true" position="0.5 0 0"></a-plane>
+              <a-text value="Location 5" align="center" color="#000000" width="2" position="0.5 0 0.01"></a-text>
+              <a-entity position="0 -0.1 0" pointer-line="target: #target-point-5; color: #ffffff;"></a-entity>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+
+        <!-- Hotspot 6 -->
+        <a-entity id="hotspot-6" position="-2.5 1 -2.0">
+          <a-entity id="target-point-6" position="0 0 0" look-at-camera>
+            <a-ring radius-inner="0.08" radius-outer="0.12" color="#ff0000" material="transparent: true; opacity: 0.8; side: double" pulse-target="speed: 300; minScale: 0.9; maxScale: 1.1"></a-ring>
+            <a-circle radius="0.06" color="#ffffff" material="transparent: true; opacity: 0.9; side: double" pulse-target="speed: 250; minScale: 0.8; maxScale: 1.0"></a-circle>
+            <a-circle radius="0.02" color="#ff0000" position="0 0 0.01" material="side: double"></a-circle>
+          </a-entity>
+          <a-entity id="marker-6" look-at-camera visibility-fade="fadeDuration: 0.3; checkInterval: 100; fovThreshold: 150; animationType: slide; targetPoint: #target-point-6; offsetX: 0.5; offsetY: 0.6; offsetZ: -0.5">
+            <a-entity id="slide-container" position="-0.5 0 0">
+              <a-plane width="1" height="0.2" color="#ffffff" material="transparent: true" position="0.5 0 0"></a-plane>
+              <a-text value="Location 6" align="center" color="#000000" width="2" position="0.5 0 0.01"></a-text>
+              <a-entity position="0 -0.1 0" pointer-line="target: #target-point-6; color: #ffffff;"></a-entity>
+            </a-entity>
+          </a-entity>
+        </a-entity>
+      </a-entity>
+      <!-- End of hotspots-container -->
+
+    </a-scene>
+</body>
+</html>

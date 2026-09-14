@@ -1,0 +1,192 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "headline": "∞² - Virtual Tour, AI Solutions & Web Services",
+  "description": "Infinity Squared Technologies delivers Virtual Tour Experiences, AI solutions, and Web Services. Experience innovative solutions, immersive reality, and engaging experiences",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://infinitysquaredtech.com/#organization",
+    "name": "Infinity Squared Technologies",
+    "url": "https://infinitysquaredtech.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://infinitysquaredtech.com/asset/logos/infinity_squared_512.webp",
+      "width": 512,
+      "height": 512
+    },
+    "sameAs": [
+        "https://linkedin.com/company/infinity-squared-technologies",
+        "https://twitter.com/infinity2tech"
+    ]
+  },
+  "publisher": {
+    "@id": "https://infinitysquaredtech.com/#organization"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://infinitysquaredtech.com/"
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2025-07-20",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://infinitysquaredtech.com/asset/cover.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "keywords": [
+    "Virtual Tour Company",
+    "AR/VR development",
+    "AI Solutions", 
+    "web development",
+    "WebAR",
+    "WebVR",
+    "Mixed Reality",
+    "Computer Vision",
+    "Machine Learning",
+    "Natural Language Processing",
+    "Progressive Web Apps",
+    "Cloud Integration",
+    "technology innovation",
+    "immersive experiences"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Augmented Reality Development",
+      "description": "WebAR applications and immersive AR experiences"
+    },
+    {
+      "@type": "Thing", 
+      "name": "Virtual Tours",
+      "description": "Immersive virtual tour experiences and applications"
+    },
+    {
+      "@type": "Thing",
+      "name": "Artificial Intelligence",
+      "description": "AI/ML solutions including computer vision and NLP"
+    },
+    {
+      "@type": "Thing",
+      "name": "Web Development",
+      "description": "Modern responsive web applications and PWAs"
+    }
+  ],
+  "offers": [
+    {
+      "@type": "Service",
+      "name": "AR/VR Development Services",
+      "description": "Immersive Virtual Tour, WebAR, and Mixed Reality solutions",
+      "provider": {
+        "@id": "https://infinitysquaredtech.com//#/services/ar-vr"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AR/VR Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WebAR Applications"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virtual Tour Experiences"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Mixed Reality Experiences"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "AI/ML Solutions",
+      "description": "Intelligent systems with computer vision, ML models, and NLP",
+      "provider": {
+        "@id": "https://infinitysquaredtech.com/#/services/ai-ml"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI/ML Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Computer Vision"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Machine Learning Models"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Natural Language Processing"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Web Development",
+      "description": "Modern responsive design and Progressive Web Apps",
+      "provider": {
+        "@id": "https://infinitysquaredtech.com/#/services/web-dev"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "React Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Progressive Web Apps"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cloud Integration"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

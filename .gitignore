@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+*.log
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Environment files
+.env
+.env.*
+
+# Misc
+*.swp
+*.swo
+
+# large files
+tours/ambit/iconia/
+*.zip

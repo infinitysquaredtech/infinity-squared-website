@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infinity Squared Technologies</title>
+    <meta name="description" content="Leading technology company specializing in AR/VR development, End-to-End AI/ML solutions, and Web Development services.">
+    <meta name="author" content="Infinity Squared Technologies">
+
+    <!-- favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Apple Touch Icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Infinity Squared Technologies">
+    <link rel="apple-touch-icon" href="https://infinitysquaredtech.com/asset/logos/infinity_squared_192.webp" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://infinitysquaredtech.com/asset/logos/infinity_squared_512.webp" sizes="512x512">
+
+    <!-- scripts and styles -->
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script> -->
+    <script src="video-shader.js"></script>
+    <!-- <script src="ar_target_handler.js"></script> -->
+    <script src="cloak.js"></script>
+    <script src="portal_click_handler.js"></script>
+
+    <!-- for visitors analytics -->
+    <script data-host="https://app.microanalytics.io" data-dnt="false" src="https://app.microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
+  </head>
+  <body>
+    
+    <!-- AR Scene Setup -->
+    <a-scene mindar-image="filterMinCF:0.001; filterBeta: 0.01; imageTargetSrc: ashwagandha.mind;" color-space="sRGB" renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true; precision: medium; colorManagement: true; physicallyCorrectLights;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <!-- Assets to be used -->
+      <a-assets>
+        <!-- 3D assets -->
+        <a-asset-item id="ground" src="asset/ground.glb"></a-asset-item>
+        <a-asset-item id="avatarModel" src="asset/new_bottle.glb"></a-asset-item>
+        <a-asset-item id="morterModel" src="asset/ayurvedic.glb"></a-asset-item>
+        <a-asset-item id="pill" src="asset/pill.glb"></a-asset-item>
+
+        <!-- Portal door texture -->
+        <!-- <img id="marker" src="asset/rasayanam%20ashwagandha.webp"> -->
+
+        <!-- Box inside texture -->
+        <img id="inside" src="asset/box_.webp">
+
+        <!-- circle buttons -->
+        <img id="small_b1" src="asset/ash_1.webp">
+        <img id="small_b2" src="asset/ash_2.webp">
+        <img id="small_b3" src="asset/ash_3.webp">
+        <img id="small_b4" src="asset/ash_4.webp">
+        <img id="small_b5" src="asset/ash_5.webp">
+        <img id="small_b6" src="asset/ash_6.webp">
+
+        <!-- Videos -->
+        <video id="currentVid" src="" autoplay loop="true" crossorigin="anonymous" playsinline webkit-playsinline></video>
+        <video id="coverVid" src="" autoplay crossorigin="anonymous" playsinline webkit-playsinline></video>
+      </a-assets>
+
+      <!-- Camera Setup -->
+      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable"></a-camera>
+
+      <!-- Target environment -->
+      <a-entity mindar-image-target="targetIndex: 0" cursor="rayOrigin: mouse" id="animated-target">
+        <a-entity light="type: ambient; color: #CCC; intensity: 0.6"></a-entity>
+        <!-- <a-entity light="type: hemisphere; color: #CCC; groundColor: #FFF; intensity: 2"></a-entity> -->
+        <a-light type="directional" intensity="0.5" position="0 0 0" rotation="-90 -90 0" target="#directionaltarget">
+          <a-entity id="directionaltarget" position="-1 0 -1"></a-entity>
+        </a-light>
+
+        <a-entity position="0 0 -0.6" rotation="90 0 0" cloak></a-entity>
+    
+        <a-box position="0 0 -0.6" scale="1.1 1.95 1.1" src="#inside" material="side: back;"></a-box>
+
+<!--         <a-image id="cover" src="#marker" position="0 0 0" height="1.8" width="1" rotation="0 0 0"></a-image> -->
+
+        <!-- Button-1 -->
+
+        <!-- <a-entity geometry="primitive: plane" position="-0.8 0.2 0" material="shader: flat; src: #marker"></a-entity> -->
+
+        <!-- Button-1 -->
+        <a-image id="button1" src="asset/mental.jpg"
+                 width="1" height="0.4"
+                 position="-1.05 0.75 0"
+                 visible="false">
+        </a-image>
+
+        <!-- Button-2 -->
+        <a-image id="button2" src="asset/cognitive.jpg"
+                 width="1.6" height="0.65"
+                 position="0 1.3 0"
+                 visible="false">
+        </a-image>
+
+        <!-- Button-3 -->
+        <a-image id="button3" src="asset/brain.jpg"
+                 width="1" height="0.4"
+                 position="1.05 0.75 0"
+                 visible="false">
+        </a-image>
+
+        <!-- Button-4 -->
+<!--         <a-image id="button4" src="asset/nervous.jpg"
+                 width="1.7" height="0.7"
+                 position="0 1.3 0"
+                 visible="false">
+        </a-image> -->
+
+        <!-- Back -->
+        <a-image id="example-back" class="clickable" src="asset/left-arrow.webp"
+                 width="0.3" height="0.3"
+                 position="0 -1.2 0"
+                 visible="false">
+        </a-image>
+        <!-- Info-1 -->
+        <a-image id="info_1" src="asset/what-is-removebg.webp"
+                 width="2" height="1.4"
+                 position="0 1.6 0"
+                 visible="false">
+        </a-image>
+        <!-- Info-2 -->
+        <a-image id="info_2" src="asset/pill-12-removebg.webp"
+                 width="1.9" height="1.1"
+                 position="0 1.5 0"
+                 visible="false">
+        </a-image>
+        <!-- Info-3 -->
+        <a-image id="info_3" src="asset/pill-spec-removebg.webp"
+                 width="1.8" height="1.2"
+                 position="0 1.5 0"
+                 visible="false">
+        </a-image>
+        <!-- Info-4 -->
+        <a-image id="info_4" src="asset/facts-removebg.webp"
+                 width="1.8" height="0.8"
+                 position="0 1.3 0"
+                 visible="false">
+        </a-image>
+
+
+        <a-entity id="circle_menu" scale="1 1 1">
+
+          <a-image id="cir1" class="clickable" src="#small_b1" width="0.6" height="0.6" position="-0.8 1 0.1"></a-image>
+          <a-image id="cir2" class="clickable" src="#small_b2" width="0.6" height="0.6" position="-0.8 0 0.1"></a-image>
+          <a-image id="cir3" class="clickable" src="#small_b3" width="0.6" height="0.6" position="-0.8 -1 0.1"></a-image>
+          <a-image id="cir4" class="clickable" src="#small_b4" width="0.6" height="0.6" position="0.8 -1 0.1"></a-image>
+          <a-image id="cir5" class="clickable" src="#small_b5" width="0.6" height="0.6" position="0.8 0 0.1"></a-image>
+          <a-image id="cir6" class="clickable" src="#small_b6" width="0.6" height="0.6" position="0.8 1 0.1"></a-image>
+
+        </a-entity>
+
+        <a-entity id="3d_model">
+          <a-gltf-model
+            id="animated-ground"
+            rotation="0 0 0"
+            position="0 -0.78 -0.6"
+            scale="0.18 0.17 0.18"
+            src="#ground"
+            visible="true">
+          </a-gltf-model>
+
+          <a-gltf-model 
+            id="animated-pill"
+            rotation="0 0 0"
+            position="0 0 -0.6"
+            scale="0 0 0"
+            src="#pill"
+            animation="property: rotation; to:0 360 0; loop:true; easing: linear; dur: 5000"
+            visible="false">
+          </a-gltf-model>
+          
+          <a-gltf-model 
+            id="animated-morter"
+            rotation="0 0 0"
+            position="0 -0.8 -0.6"
+            scale="0 0 0"
+            src="#morterModel"
+            visible="false"
+            bottle-mod>
+          </a-gltf-model>
+
+          <a-gltf-model 
+            id="animated-bottle"
+            rotation="0 -90 0"
+            position="0 -0.8 -0.6"
+            scale="0.0047 0.0047 0.0047"
+            src="#avatarModel"
+            visible="true"
+            bottle-mod>
+          </a-gltf-model>
+        </a-entity>
+
+        <a-entity
+          id="trans-vid"
+          material="shader: transparent-video; src: #currentVid"
+          geometry="primitive: plane; width: 1.1; height: 1.1"
+          position="0 0 -0.3"
+          scale="0 0 0">
+        </a-entity>
+        
+        <a-entity
+          id="cover-vid"
+          material="src: #coverVid"
+          geometry="primitive: plane; width: 1.95; height: 1.1"
+          position="0 0 0"
+          rotation="0 0 90"
+          scale="0 0 0">
+        </a-entity>
+
+      </a-entity>
+
+    </a-scene>
+    
+  </body>
+</html>
