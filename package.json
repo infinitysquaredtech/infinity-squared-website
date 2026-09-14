@@ -1,6 +1,6 @@
 {
   "name": "infinity-squared-website",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "build:app": "npx babel app.js --out-file lib/app.min.js --minified",
     "build:components": "npx babel components/ --out-dir lib/components --minified",
